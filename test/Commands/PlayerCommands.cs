@@ -54,6 +54,27 @@ namespace test.Commands
 
         }
 
+        [Command("anim"," hace una animacion")]
+        public void AnimCmd(GTANetworkAPI.Player player)
+        {
+            player.PlayAnimation("mp_arresting", "idle", 49);
+        }
+
+
+        [Command("blip", " crear blip")]
+        public void BlipCmd(GTANetworkAPI.Player player, float x, float y, float z)
+        {
+            Utils.createBlipOnPos(x, y, z);
+        }
+
+        [Command("bliponpos", " crear blip")]
+        public void BlipOnposCmd(GTANetworkAPI.Player player)
+        {
+            Utils.createBlipOnPos(player.Position.X, player.Position.Y, player.Position.Z);
+        }
+
+
+
         public static void RegisterAccount(GTANetworkAPI.Player client, string username, string password)
         {
 
@@ -66,5 +87,7 @@ namespace test.Commands
 
 
         }
+
+
     }
 }
