@@ -1,0 +1,4 @@
+﻿<meta>
+    <info name="test" description="Your gamemode description" />
+    <script src="bin/Debug/net5.0/test.dll" />
+</meta>
