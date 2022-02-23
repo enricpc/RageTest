@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GTANetworkAPI;
-
+using MySql.Data.MySqlClient;
 
 namespace test
 {
@@ -12,7 +12,7 @@ namespace test
         {
 
          consolelog("Gm activo");
-
+            MySQL.MySQL.InitConnection();
         }
 
 
@@ -44,7 +44,7 @@ namespace test
 
         public static void consolelog(string message)
         {
-            NAPI.Util.ConsoleOutput(message);
+            NAPI.Util.ConsoleOutput("[LOG]"+message);
         }
     }
 }
