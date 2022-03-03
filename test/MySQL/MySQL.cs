@@ -21,7 +21,7 @@ namespace test.MySQL
             this.Host = "localhost";
             this.Username = "root";
             this.Password = "";
-            this.Database = "test";
+            this.Database = "ragetest";
         }
 
         public static void InitConnection()
