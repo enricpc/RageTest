@@ -105,6 +105,15 @@ namespace test.Commands
         {
             Player.Data.ReturnPlayerData(player).AdminLevel = Admin.Rank.Admin_Owner;
         }
+
+        [Command("freeze")]
+        public void CMD_Freeze(GTANetworkAPI.Player player, GTANetworkAPI.Player target, bool freeze)
+        {
+            NAPI.ClientEvent.TriggerClientEvent(target, "FreezePlayerClient", freeze);
+            string str = (freeze) ? "congelat" : "descongelat";
+            player.SendChatMessage($"Has {str} a {target.Name}");
+            target.SendChatMessage($"Has estat {str} per {player.Name}");
+        }
     }
 
 }
